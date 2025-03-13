@@ -33,6 +33,7 @@ class ElasticSearchConfig(BaseConfig):
     port: int = 9200
     user: Optional[str] = None
     password: Optional[str] = None
+    model_name: "sentence-transformers/all-MiniLM-L6-v2"
 
    
     model_config: ConfigDict = {
