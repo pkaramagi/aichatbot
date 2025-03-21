@@ -5,7 +5,7 @@ class NLTKResourceManager:
     def __init__(self):
         self.resource_name = self._determine_resource()
 
-    def _determin_resource(self)->str:
+    def _determine_resource(self)->str:
         nltk_version = tuple(map(int, nltk.__version__.split('.')))
         return 'punkt_tab' if nltk_version >= (3,8,2) else 'punkt'
     

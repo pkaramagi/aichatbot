@@ -1,7 +1,7 @@
 from typing import List
 from openai import OpenAI, OpenAIError
 from app.embedders.base import Embedder
-from app.config.settings import Settings
+from app.core.config.settings import Settings
 
 class OpenAIEmbedder(Embedder):
     def __init__(self, model_name:str="text-embedding-3-small"):

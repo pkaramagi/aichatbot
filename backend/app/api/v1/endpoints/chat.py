@@ -12,3 +12,9 @@ async def ask_question(request: QuestionRequest):
         return await chat_service.ask_question(request.question)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+@router.get("/setup")
+def setup():
+    chat_service = ChatService()
+    return  chat_service.setup()
+    
