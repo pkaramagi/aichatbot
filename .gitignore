@@ -1,0 +1,4 @@
+Lib/site-packages/pip/__init__.py
+__pycache__/
+chroma_db
+backend/.env

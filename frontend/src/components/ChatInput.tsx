@@ -9,7 +9,8 @@ function ChatInput({onSend}:ChatInputProps){
     const [message, setMessage] = useState('');
     const handleSubmit = (e:React.FormEvent) =>{
         e.preventDefault();
-        if(message.trim()){
+        const trimmedMessage = message.trim();
+        if(trimmedMessage){
             onSend(message);
             setMessage('');
         }
@@ -24,7 +25,7 @@ function ChatInput({onSend}:ChatInputProps){
                 placeholder="Type a message..."
                 className="flex-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
             />
-            <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Send</button>
+            <button type="submit" disabled={!message.trim()} className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Send</button>
         </form>
     );
 
